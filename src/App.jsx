@@ -113,7 +113,7 @@ function App() {
           </button>
         ))}
       </div>
-      <h3>{win &&   winningSymbol +"Is The Winner !"}</h3>
+      <h3>{win &&   winningSymbol +" Is The Winner !"}</h3>
       {win && (
         <Restart
           setBoard={setBoard}
