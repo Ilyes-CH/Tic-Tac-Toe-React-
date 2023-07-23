@@ -9,7 +9,8 @@ function Restart({
   setCountx,
   setCounto,
   counto,
-  countx
+  countx,
+  setstart
 }) {
   function handleRestart() {
     setBoard([
@@ -23,12 +24,13 @@ function Restart({
       { key: 7, value: "" },
       { key: 8, value: "" },
     ]);
-    setStart("x");
+    // setStart("x");
     setWin(false);
     setWinningCombination([]);
     setWinningSymbol("");
     setCounto(counto);
     setCountx(countx);
+    setStart("X")
   }
   return (
     <>
