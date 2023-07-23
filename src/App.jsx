@@ -124,6 +124,7 @@ function App() {
           setCountx={setCountx}
           counto={counto}
           countx={countx}
+          setStart={setStart}
         />
       )}
       {win && <Sound audiRef={audioRef} winnerSound={winnerSound} />}
