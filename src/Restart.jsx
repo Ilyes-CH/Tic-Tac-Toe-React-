@@ -10,7 +10,11 @@ function Restart({
   setCounto,
   counto,
   countx,
+<<<<<<< HEAD
   setstart
+=======
+  setStart
+>>>>>>> e492f548475e470801056651d69f060ed6882476
 }) {
   function handleRestart() {
     setBoard([
@@ -24,7 +28,11 @@ function Restart({
       { key: 7, value: "" },
       { key: 8, value: "" },
     ]);
+<<<<<<< HEAD
     // setStart("x");
+=======
+    
+>>>>>>> e492f548475e470801056651d69f060ed6882476
     setWin(false);
     setWinningCombination([]);
     setWinningSymbol("");
