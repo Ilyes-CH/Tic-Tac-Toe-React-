@@ -24,7 +24,7 @@ function Restart({
       { key: 7, value: "" },
       { key: 8, value: "" },
     ]);
-    setStart("x");
+    
     setWin(false);
     setWinningCombination([]);
     setWinningSymbol("");
