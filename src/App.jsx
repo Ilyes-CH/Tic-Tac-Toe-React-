@@ -47,7 +47,6 @@ function App() {
 
     // Get an array of all the button values
     const buttonValues = board.map((element) => element.value);
-    // Check if any winning combination is achieved
     for (const combination of winningCombinations) {
       const [a, b, c] = combination;
 
@@ -92,7 +91,7 @@ function App() {
 
   useEffect(() => {
     winner();
-  }, [board, win]); // Call winner() after every board update
+  }, [board, win]); 
 
   return (
     <>
