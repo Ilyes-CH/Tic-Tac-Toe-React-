@@ -1,7 +1,7 @@
 # React + Vite
 # Tic Tac Toe 
 # Preview Of The Game
-!(Preview)(https://github.com/Ilyes-CH/Tic-Tac-Toe-React-/blob/master/src/assets/tictactoe.png)
+!(Preview)[(https://github.com/Ilyes-CH/Tic-Tac-Toe-React-/blob/master/src/assets/tictactoe.png)](https://raw.githubusercontent.com/Ilyes-CH/Tic-Tac-Toe-React-/master/src/assets/tictactoe.png)
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:
