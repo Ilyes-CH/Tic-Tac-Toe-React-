@@ -22,7 +22,7 @@ function App() {
     { key: 7, value: "", ref: useRef(null) },
     { key: 8, value: "", ref: useRef(null) },
   ]);
-
+  
   function handleClick(index) {
     const updatedBoard = [...board];
     if (updatedBoard[index].value === "") {
@@ -64,6 +64,8 @@ function App() {
         if (win) {
           const winnerSymbol = buttonValues[a];
           setWinningSymbol(winnerSymbol);
+         
+
           if (winnerSymbol === "O") {
             setCounto(counto + 1);
           } else {
@@ -80,7 +82,8 @@ function App() {
 
       setWinningCombination([]);
       setWin(false);
-      window.location.reload();
+      
+      // window.location.reload();
       return;
     }
 
@@ -88,16 +91,18 @@ function App() {
     console.log("Continue the game.");
   }
 
-
   useEffect(() => {
     winner();
-  }, [board, win]); 
+  }, [board, win]);
 
   return (
     <>
       <h1>Tic Tac Toe</h1>
-        <h2>{"X wins:  " + countx}{" |  O wins:  " + counto}</h2>
-        
+      <h2>
+        {"X wins:  " + countx}
+        {" |  O wins:  " + counto}
+      </h2>
+
       <div className="container">
         {board.map((element) => (
           <button
@@ -112,7 +117,7 @@ function App() {
           </button>
         ))}
       </div>
-      <h3>{win &&   winningSymbol +" Is The Winner !"}</h3>
+      <h3>{win && winningSymbol + " Is The Winner !"}</h3>
       {win && (
         <Restart
           setBoard={setBoard}
@@ -124,7 +129,19 @@ function App() {
           setCountx={setCountx}
           counto={counto}
           countx={countx}
-         
+        />
+      )}  
+       {!win && (
+        <Restart
+          setBoard={setBoard}
+          setStart={setStart}
+          setWin={setWin}
+          setWinningCombination={setWinningCombination}
+          setWinningSymbol={setWinningSymbol}
+          setCounto={setCounto}
+          setCountx={setCountx}
+          counto={counto}
+          countx={countx}
         />
       )}
       {win && <Sound audiRef={audioRef} winnerSound={winnerSound} />}
