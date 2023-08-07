@@ -23,7 +23,7 @@ function App() {
     { key: 7, value: "", ref: useRef(null) },
     { key: 8, value: "", ref: useRef(null) },
   ]);
-  
+
   function handleClick(index) {
     const updatedBoard = [...board];
     if (updatedBoard[index].value === "") {
@@ -65,6 +65,8 @@ function App() {
         if (win) {
           const winnerSymbol = buttonValues[a];
           setWinningSymbol(winnerSymbol);
+          setDisabledBtn(true);
+
           if (winnerSymbol === "O") {
             setCounto(counto + 1);
           } else {
@@ -81,7 +83,8 @@ function App() {
 
       setWinningCombination([]);
       setWin(false);
-      window.location.reload();
+
+      // window.location.reload();
       return;
     }
 
@@ -128,7 +131,19 @@ function App() {
           setCountx={setCountx}
           counto={counto}
           countx={countx}
-         
+        />
+      )}
+      {!win && (
+        <Restart
+          setBoard={setBoard}
+          setStart={setStart}
+          setWin={setWin}
+          setWinningCombination={setWinningCombination}
+          setWinningSymbol={setWinningSymbol}
+          setCounto={setCounto}
+          setCountx={setCountx}
+          counto={counto}
+          countx={countx}
         />
       )}
       {win && <Sound audiRef={audioRef} winnerSound={winnerSound} />}
