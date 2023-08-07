@@ -4,6 +4,7 @@ import winnerSound from "./assets/winner.wav";
 import Sound from "./Sound";
 import Restart from "./Restart";
 function App() {
+  const [disabledBtn, setDisabledBtn] = useState(false);
   const audioRef = useRef(null);
   const [countx, setCountx] = useState(0);
   const [counto, setCounto] = useState(0);
@@ -22,7 +23,7 @@ function App() {
     { key: 7, value: "", ref: useRef(null) },
     { key: 8, value: "", ref: useRef(null) },
   ]);
-  
+
   function handleClick(index) {
     const updatedBoard = [...board];
     if (updatedBoard[index].value === "") {
@@ -64,7 +65,7 @@ function App() {
         if (win) {
           const winnerSymbol = buttonValues[a];
           setWinningSymbol(winnerSymbol);
-         
+          setDisabledBtn(true)
 
           if (winnerSymbol === "O") {
             setCounto(counto + 1);
@@ -82,7 +83,7 @@ function App() {
 
       setWinningCombination([]);
       setWin(false);
-      
+
       // window.location.reload();
       return;
     }
@@ -112,6 +113,7 @@ function App() {
               winningCombination.includes(element.key) ? "win" : ""
             }`}
             onClick={() => handleClick(element.key)}
+            disabled={win && disabledBtn}
           >
             {element.value}
           </button>
@@ -130,8 +132,8 @@ function App() {
           counto={counto}
           countx={countx}
         />
-      )}  
-       {!win && (
+      )}
+      {!win && (
         <Restart
           setBoard={setBoard}
           setStart={setStart}
